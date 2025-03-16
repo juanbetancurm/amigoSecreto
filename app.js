@@ -32,18 +32,21 @@ function actualizarListaAmigos() {
     });
 }
 
+function sortearAmigo() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if (amigos.length === 0) {
+        alert('Por favor, agregue al menos un amigo a la lista');
+        return;
+    }
+    
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    
+    const amigoSorteado = amigos[indiceAleatorio];
+    
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = '';
+    
+    const li = document.createElement('li');
+    li.textContent = `Amigo secreto: ${amigoSorteado}`;
+    resultado.appendChild(li);
+}
